@@ -18,7 +18,16 @@ function myFunction2(req, res, next) {
       next();
 
 }
+app.get('/now', function myFunction2(req, res, next) {
+    req.time = new Date().toString();
+        
+    next();
 
+}, function myFunction2(req, res) {
+    
+  res.send({time: req.time});
+
+})
 
 
 
