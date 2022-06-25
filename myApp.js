@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+var bodyParser = require('body-parser')
 //console.log("Hello World");
 app.use('/public',express.static(__dirname + '/public'));
 app.get('/',myFunction);
@@ -39,7 +40,7 @@ function myFunction5(req, res) {
   res.send({ name: fullname});
     console.log(fullname)
 }
-
+app.use(bodyParser.urlencoded({extended: false}))
 
 
 
