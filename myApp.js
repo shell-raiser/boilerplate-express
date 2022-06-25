@@ -33,7 +33,12 @@ function myFunction4(req, res) {
   res.send({echo: req.params.word});
 }
 
-
+app.get('/name', myFunction5)
+function myFunction5(req, res) {
+    fullname = req.query.first+" "+req.query.last;
+  res.send({ name: fullname});
+    console.log(fullname)
+}
 
 
 
