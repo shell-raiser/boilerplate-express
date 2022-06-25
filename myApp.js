@@ -42,7 +42,12 @@ function myFunction5(req, res) {
 }
 app.use(bodyParser.urlencoded({extended: false}))
 
-
+app.post('/name', myFunction6)
+function myFunction6(req, res) {
+  fullname = req.body.first+" "+req.body.last;
+    res.send({name: fullname});
+    console.log(fullname)
+}
 
 
 
