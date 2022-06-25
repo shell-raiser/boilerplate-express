@@ -28,8 +28,10 @@ app.get('/now', function myFunction2(req, res, next) {
   res.send({time: req.time});
 
 })
-
-
+app.get('/:word/echo', myFunction4)
+function myFunction4(req, res) {
+  res.send({echo: req.params.word});
+}
 
 
 
